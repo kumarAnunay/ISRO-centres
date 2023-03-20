@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isro Centers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" type="image/icon" href="./assets/images/img1.png">
+</head>
+
+<body>
+
+    <nav class="navBar">
+        <div class="logo">
+            <img src="./assets/images/img1.png" class="isroLogo" alt="isro-logo">
+        </div>
+
+        <div class="name">
+            <h1 class="heading">Indian Space Research Organisation</h1>
+        </div>
+    </nav>
+
+    <section class="main">
+        <div class="searchBar">
+            <form>
+                <div class="search">
+                    <div class="searcBar">
+                        <input type="text" id="search" placeholder="Type here..." onkeyup="searchData()">
+                        <button id="searchButton" type="submit" class="btn btn-primary">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+
+
+                    <div class="btn ">
+                        <button type="button" id="city" class=" ">City</button>
+                        <button type="button" id="state" class="">State</button>
+                        <button type="button" id="name" class="">Center</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="d-flex justify-content-center loader">
+            <div class="spinnerBorder" role="status" id="loading">
+            </div>
+            <span class="srOnly" id="loadingSpan">Loading...</span>
+        </div>
+
+        <div class="userCards" data-user-cards-container>
+            <table id="isroCenters" class="table">
+                <tr class="table-row">
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
