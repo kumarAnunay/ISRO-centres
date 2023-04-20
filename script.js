@@ -61,7 +61,6 @@ function centerBtn() {
 console.log(flag);
 
 function searchData() {
-  debugger;
   console.log(data);
   let val = document.getElementById("search").value;
   let tab = `<tr class="row">
