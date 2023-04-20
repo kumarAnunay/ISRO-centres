@@ -1,4 +1,4 @@
-let data;
+var data;
 
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
@@ -18,50 +18,46 @@ function hideloader() {
   document.getElementById("loadingSpan").style.display = "none";
 }
 
-
 function show(data) {
   let tab = `<tr>
-        <th scope="col">S.no</th>
-		<th scope="col">Center Name</th>
-		<th scope="col">Place</th>
-		<th scope="col">State</th>
-		</tr>`;
-
+            <th>S.no</th>
+            <th>Center Name</th>
+            <th>Place</th>
+            <th>State</th>
+            </tr>`;
 
   for (let r of data.centres) {
     tab += `<tr class="row">
             <td class = "table-data">${r.id} </td>
-            <td "table-data">${r.name} </td>
-            <td "table-data">${r.Place}</td>
-            <td "table-data">${r.State}</td>
+            <td class="table-data">${r.name} </td>
+            <td class="table-data">${r.Place}</td>
+            <td class="table-data">${r.State}</td>
             </tr>`;
   }
 
   document.getElementById("isroCenters").innerHTML = tab;
 }
 
-
 let flag = "";
 
 function cityBtn() {
   flag = "city";
   searchData();
-};
+}
 
 function stateBtn() {
   flag = "state";
   searchData();
-};
+}
 
 function centerBtn() {
   flag = "name";
   searchData();
-};
+}
 
 console.log(flag);
 
 function searchData() {
-  console.log(data);
   let val = document.getElementById("search").value;
   let tab = `<tr class="row">
         <th class="col">S.no</th>
@@ -85,9 +81,9 @@ function searchByName(tab, val) {
     if (r.name.toLowerCase().includes(val.toLowerCase())) {
       tab += `<tr class="row">
 			<td class="table-data">${i++} </td>
-			<td "table-data">${r.name} </td>
-			<td "table-data">${r.Place}</td>
-			<td "table-data">${r.State}</td>
+			<td class="table-data">${r.name} </td>
+			<td class="table-data">${r.Place}</td>
+			<td class="table-data">${r.State}</td>
 			</tr>`;
     }
   }
@@ -107,9 +103,9 @@ function searchByState(tab, val) {
     if (r.State.toLowerCase().includes(val.toLowerCase())) {
       tab += `<tr class="row">
 			<td class="table-data">${i++} </td>
-			<td "table-data">${r.name} </td>
-			<td "table-data">${r.Place}</td>
-			<td "table-data">${r.State}</td>
+			<td class="table-data">${r.name} </td>
+			<td class="table-data">${r.Place}</td>
+			<td class="table-data">${r.State}</td>
 		</tr>`;
     }
   }
@@ -130,9 +126,9 @@ function searchByCity(tab, val) {
     if (r.Place.toLowerCase().includes(val.toLowerCase())) {
       tab += `<tr class="row">
 			<td class="table-data">${i++} </td>
-			<td "table-data">${r.name} </td>
-			<td "table-data">${r.Place}</td>
-			<td "table-data">${r.State}</td>
+			<td class="table-data">${r.name} </td>
+			<td class="table-data">${r.Place}</td>
+			<td class="table-data">${r.State}</td>
 		</tr>`;
     }
   }
