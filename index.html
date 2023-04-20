@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isro Centers</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/icon" href="./assets/images/img1.png">
 </head>
 
@@ -27,35 +26,26 @@
         <div class="searchBar">
             <form>
                 <div class="search">
-                    <div class="searcBar">
-                        <input type="text" id="search" placeholder="Type here..." onkeyup="searchData()">
-                        <button id="searchButton" type="submit" class="btn btn-primary">
-                            <i class='bx bx-search'></i>
-                        </button>
+                    <div>
+                        <input type="text" id="search" placeholder="Type here..." />
+                        <button id="searchButton" class="btn">Refresh</button>
                     </div>
 
-
-                    <div class="btn ">
-                        <button type="button" id="city" class=" ">City</button>
-                        <button type="button" id="state" class="">State</button>
-                        <button type="button" id="name" class="">Center</button>
+                    <div>
+                        <button type="button" id="city" onclick="cityBtn()">City</button>
+                        <button type="button" id="state" onclick="stateBtn()">State</button>
+                        <button type="button" id="name" onclick="centerBtn()">Center</button>
                     </div>
                 </div>
             </form>
         </div>
 
         <div class="d-flex justify-content-center loader">
-            <div class="spinnerBorder" role="status" id="loading">
-            </div>
             <span class="srOnly" id="loadingSpan">Loading...</span>
         </div>
 
         <div class="userCards" data-user-cards-container>
             <table id="isroCenters" class="table">
-                <tr class="table-row">
-                    <td>
-                    </td>
-                </tr>
             </table>
         </div>
     </section>
