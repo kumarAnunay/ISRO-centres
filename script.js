@@ -2,6 +2,9 @@ var data;
 
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
+const cityBttn = document.getElementById("city");
+const stateBttn = document.getElementById("state");
+const centreBttn = document.getElementById("name");
 
 async function getapi() {
   const url = "https://isro.vercel.app/api/centres";
@@ -42,15 +45,24 @@ let flag = "";
 
 function cityBtn() {
   flag = "city";
+  cityBttn.classList.add("active");
+  stateBttn.classList.remove("active");
+  centreBttn.classList.remove("active");
   searchData();
 }
 
 function stateBtn() {
+  cityBttn.classList.remove("active");
+  stateBttn.classList.add("active");
+  centreBttn.classList.remove("active");
   flag = "state";
   searchData();
 }
 
 function centerBtn() {
+  cityBttn.classList.remove("active");
+  stateBttn.classList.remove("active");
+  centreBttn.classList.add("active");
   flag = "name";
   searchData();
 }
@@ -63,14 +75,12 @@ function searchData() {
 		<th>Place</th>
 		<th>State</th>
 		</tr>`;
-  if (val.length >= 3) {
-    if (flag === "name") {
-      searchByName(tab, val);
-    } else if (flag === "city") {
-      searchByCity(tab, val);
-    } else if (flag === "state") {
-      searchByState(tab, val);
-    }
+  if (flag === "name") {
+    searchByName(tab, val);
+  } else if (flag === "city") {
+    searchByCity(tab, val);
+  } else if (flag === "state") {
+    searchByState(tab, val);
   }
 }
 

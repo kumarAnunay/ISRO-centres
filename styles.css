@@ -19,13 +19,13 @@ h1 {
   text-shadow: 1px 1px 3px black;
 }
 
-.logo > img {
+.logo>img {
   width: 100px;
   height: 100px;
 }
 
 .main {
-  width: 90%;
+  max-width: 90%;
   margin: 10px auto;
   border: 1px solid #7a6ac68f;
 }
@@ -37,7 +37,7 @@ h1 {
 }
 
 #search {
-  width: 300px;
+  max-width: 300px;
   height: 40px;
   margin: 10px;
   padding: 7px;
@@ -46,7 +46,7 @@ h1 {
 }
 
 button {
-  width: 80px;
+  max-width: 80px;
   background: #030575bd;
   border: none;
   padding: 5px;
@@ -62,6 +62,12 @@ button {
 .btn {
   width: 90px !important;
   margin-top: 15px !important;
+  margin-right: 5px;
+}
+
+.active {
+  background-color: #913535;
+  transform: scale(1.1);
 }
 
 table {
