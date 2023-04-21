@@ -63,13 +63,14 @@ function searchData() {
 		<th>Place</th>
 		<th>State</th>
 		</tr>`;
-
-  if (flag === "name") {
-    searchByName(tab, val);
-  } else if (flag === "city") {
-    searchByCity(tab, val);
-  } else if (flag === "state") {
-    searchByState(tab, val);
+  if (val.length >= 3) {
+    if (flag === "name") {
+      searchByName(tab, val);
+    } else if (flag === "city") {
+      searchByCity(tab, val);
+    } else if (flag === "state") {
+      searchByState(tab, val);
+    }
   }
 }
 
@@ -133,7 +134,7 @@ function searchByCity(tab, val) {
 
   if (i <= 1) {
     tab += `<tr>
-			<tdstyle="text-align:center;">No Record Found!!</tdstyle=>
+			<td colspan="4" style="text-align:center;">No Record Found!!</td>
 		</tr>`;
   }
   document.getElementById("isroCenters").innerHTML = tab;
