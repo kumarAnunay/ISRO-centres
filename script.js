@@ -89,7 +89,7 @@ function searchByName(tab, val) {
   }
 
   if (i <= 1) {
-    tab += `<tr scope="row">
+    tab += `<tr>
 			<td colspan="4" style="text-align:center;">No Record Found!!</td>
 		</tr>`;
   }
@@ -111,7 +111,7 @@ function searchByState(tab, val) {
   }
 
   if (i <= 1) {
-    tab += `<tr scope="row">
+    tab += `<tr>
 			<td colspan="4" style="text-align:center;">No Record Found!!</td>
 		</tr>`;
   }
