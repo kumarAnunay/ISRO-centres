@@ -55,8 +55,6 @@ function centerBtn() {
   searchData();
 }
 
-console.log(flag);
-
 function searchData() {
   let val = document.getElementById("search").value;
   let tab = `<tr>
