@@ -25,8 +25,7 @@ h1 {
 }
 
 .main {
-  max-width: 90%;
-  margin: 10px auto;
+  margin: 10px 5%;
   border: 1px solid #7a6ac68f;
 }
 
@@ -37,7 +36,7 @@ h1 {
 }
 
 #search {
-  max-width: 300px;
+  min-width: 300px;
   height: 40px;
   margin: 10px;
   padding: 7px;
@@ -46,7 +45,7 @@ h1 {
 }
 
 button {
-  max-width: 80px;
+  max-width: 90px;
   background: #030575bd;
   border: none;
   padding: 5px;
