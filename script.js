@@ -27,11 +27,11 @@ function show(data) {
             </tr>`;
 
   for (let r of data.centres) {
-    tab += `<tr class="row">
+    tab += `<tr>
             <td class = "table-data">${r.id} </td>
-            <td class="table-data">${r.name} </td>
-            <td class="table-data">${r.Place}</td>
-            <td class="table-data">${r.State}</td>
+            <td>${r.name} </td>
+            <td>${r.Place}</td>
+            <td>${r.State}</td>
             </tr>`;
   }
 
@@ -59,11 +59,11 @@ console.log(flag);
 
 function searchData() {
   let val = document.getElementById("search").value;
-  let tab = `<tr class="row">
-        <th class="col">S.no</th>
-		<th class="col">Center Name</th>
-		<th class="col">Place</th>
-		<th class="col">State</th>
+  let tab = `<tr>
+        <th>S.no</th>
+		<th>Center Name</th>
+		<th>Place</th>
+		<th>State</th>
 		</tr>`;
 
   if (flag === "name") {
@@ -79,11 +79,11 @@ function searchByName(tab, val) {
   let i = 1;
   for (let r of data.centres) {
     if (r.name.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr class="row">
-			<td class="table-data">${i++} </td>
-			<td class="table-data">${r.name} </td>
-			<td class="table-data">${r.Place}</td>
-			<td class="table-data">${r.State}</td>
+      tab += `<tr>
+			<td>${i++} </td>
+			<td>${r.name} </td>
+			<td>${r.Place}</td>
+			<td>${r.State}</td>
 			</tr>`;
     }
   }
@@ -101,11 +101,11 @@ function searchByState(tab, val) {
   let i = 1;
   for (let r of data.centres) {
     if (r.State.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr class="row">
-			<td class="table-data">${i++} </td>
-			<td class="table-data">${r.name} </td>
-			<td class="table-data">${r.Place}</td>
-			<td class="table-data">${r.State}</td>
+      tab += `<tr>
+			<td>${i++} </td>
+			<td>${r.name} </td>
+			<td>${r.Place}</td>
+			<td>${r.State}</td>
 		</tr>`;
     }
   }
@@ -124,18 +124,18 @@ function searchByCity(tab, val) {
 
   for (let r of data.centres) {
     if (r.Place.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr class="row">
-			<td class="table-data">${i++} </td>
-			<td class="table-data">${r.name} </td>
-			<td class="table-data">${r.Place}</td>
-			<td class="table-data">${r.State}</td>
+      tab += `<tr>
+			<td>${i++} </td>
+			<td>${r.name} </td>
+			<td>${r.Place}</td>
+			<td>${r.State}</td>
 		</tr>`;
     }
   }
 
   if (i <= 1) {
-    tab += `<tr scope="row">
-			<td colspan="4" style="text-align:center;">No Record Found!!</td>
+    tab += `<tr>
+			<tdstyle="text-align:center;">No Record Found!!</tdstyle=>
 		</tr>`;
   }
   document.getElementById("isroCenters").innerHTML = tab;
