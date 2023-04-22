@@ -6,8 +6,8 @@
 }
 
 .logo {
-  margin-top: 10px;
-  margin-left: 70px;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
 .name {
@@ -15,7 +15,7 @@
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 35px;
   text-shadow: 1px 1px 3px black;
 }
 
@@ -25,8 +25,9 @@ h1 {
 }
 
 .main {
-  margin: 10px 5%;
-  border: 1px solid #7a6ac68f;
+  margin: 20px 5%;
+  border: 2px solid black;
+  box-shadow: 1px 1px 5px 7px #913535;
 }
 
 .search {
@@ -36,17 +37,18 @@ h1 {
 }
 
 #search {
-  min-width: 300px;
+  width: 400px;
   height: 40px;
   margin: 10px;
   padding: 7px;
+  font-size: 20px;
   border-radius: 10px;
   border: 1px solid #7a6ac68f;
 }
 
 button {
-  max-width: 90px;
-  background: #030575bd;
+  width: 100px;
+  background: #092898bd;
   border: none;
   padding: 5px;
   border-radius: 15px;
@@ -58,10 +60,8 @@ button {
   font-size: 20px;
 }
 
-.btn {
-  width: 90px !important;
-  margin-top: 15px !important;
-  margin-right: 5px;
+.userCards {
+  overflow: auto;
 }
 
 .active {
@@ -70,10 +70,10 @@ button {
 }
 
 table {
+  width: 100%;
   margin-top: 10px;
   font-size: 25px;
   border-collapse: collapse;
-  width: 100%;
 }
 
 th,
@@ -89,4 +89,78 @@ th {
 
 tr:nth-child(even) {
   background-color: #dfd9d9;
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+
+  .main {
+    margin: 10px 5%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .search {
+    display: block;
+    margin-bottom: -5px;
+  }
+
+  #search {
+    width: 98%;
+    margin: 10px 1%;
+    font-size: 17px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 100px;
+    font-size: 17px;
+  }
+
+  table {
+    font-size: 15px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .main {
+    margin: 10px 5%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .search {
+    display: block;
+    margin-bottom: -5px;
+  }
+
+  #search {
+    width: 98%;
+    margin: 10px 1%;
+    font-size: 15px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    max-width: 70px;
+    font-size: 15px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
 }

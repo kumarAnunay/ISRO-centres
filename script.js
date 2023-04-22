@@ -45,24 +45,15 @@ let flag = "";
 
 function cityBtn() {
   flag = "city";
-  cityBttn.classList.add("active");
-  stateBttn.classList.remove("active");
-  centreBttn.classList.remove("active");
   searchData();
 }
 
 function stateBtn() {
-  cityBttn.classList.remove("active");
-  stateBttn.classList.add("active");
-  centreBttn.classList.remove("active");
   flag = "state";
   searchData();
 }
 
 function centerBtn() {
-  cityBttn.classList.remove("active");
-  stateBttn.classList.remove("active");
-  centreBttn.classList.add("active");
   flag = "name";
   searchData();
 }
@@ -75,17 +66,25 @@ function searchData() {
 		<th>Place</th>
 		<th>State</th>
 		</tr>`;
-  if (flag === "name") {
-    searchByName(tab, val);
-  } else if (flag === "city") {
-    searchByCity(tab, val);
-  } else if (flag === "state") {
-    searchByState(tab, val);
+
+  if (val != "") {
+    if (flag === "name") {
+      searchByName(tab, val);
+    } else if (flag === "city") {
+      searchByCity(tab, val);
+    } else if (flag === "state") {
+      searchByState(tab, val);
+    }
   }
 }
 
 function searchByName(tab, val) {
   let i = 1;
+
+  cityBttn.classList.remove("active");
+  stateBttn.classList.remove("active");
+  centreBttn.classList.add("active");
+
   for (let r of data.centres) {
     if (r.name.toLowerCase().includes(val.toLowerCase())) {
       tab += `<tr>
@@ -108,6 +107,11 @@ function searchByName(tab, val) {
 
 function searchByState(tab, val) {
   let i = 1;
+
+  cityBttn.classList.remove("active");
+  stateBttn.classList.add("active");
+  centreBttn.classList.remove("active");
+
   for (let r of data.centres) {
     if (r.State.toLowerCase().includes(val.toLowerCase())) {
       tab += `<tr>
@@ -130,6 +134,10 @@ function searchByState(tab, val) {
 
 function searchByCity(tab, val) {
   let i = 1;
+
+  cityBttn.classList.add("active");
+  stateBttn.classList.remove("active");
+  centreBttn.classList.remove("active");
 
   for (let r of data.centres) {
     if (r.Place.toLowerCase().includes(val.toLowerCase())) {
