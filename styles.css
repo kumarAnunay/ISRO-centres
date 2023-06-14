@@ -43,12 +43,12 @@ h1 {
   padding: 7px;
   font-size: 20px;
   border-radius: 10px;
-  border: 1px solid #7a6ac68f;
+  border: 1px solid #6355a98f;
 }
 
 button {
   width: 100px;
-  background: #092898bd;
+  background: #553788;
   border: none;
   padding: 5px;
   border-radius: 15px;
@@ -89,6 +89,33 @@ th {
 
 tr:nth-child(even) {
   background-color: #dfd9d9;
+}
+
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #FFF;
+  border-bottom-color: #913535;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) {

@@ -1,20 +1,22 @@
-var data;
+let data;
 
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
-const cityBttn = document.getElementById("city");
-const stateBttn = document.getElementById("state");
-const centreBttn = document.getElementById("name");
+const cityBtn = document.getElementById("city");
+const stateBtn = document.getElementById("state");
+const centerBtn = document.getElementById("name");
 
 async function getapi() {
+  showLoader();
   const url = "https://isro.vercel.app/api/centres";
   const response = await fetch(url);
   data = await response.json();
-  console.log(data);
-  if (response) {
-    hideloader();
-  }
   show(data);
+  hideloader();
+}
+
+function showLoader() {
+  document.getElementById("loadingSpan").style.display = "block";
 }
 
 function hideloader() {
@@ -22,140 +24,140 @@ function hideloader() {
 }
 
 function show(data) {
-  let tab = `<tr>
-            <th>S.no</th>
-            <th>Center Name</th>
-            <th>Place</th>
-            <th>State</th>
+  let tableRow = `<tr>
+              <th>S.no</th>
+              <th>Center Name</th>
+              <th>City</th>
+              <th>State</th>
             </tr>`;
 
-  for (let r of data.centres) {
-    tab += `<tr>
-            <td class = "table-data">${r.id} </td>
-            <td>${r.name} </td>
-            <td>${r.Place}</td>
-            <td>${r.State}</td>
+  for (let eachRow of data.centres) {
+    tableRow += `<tr>
+              <td class = "tableRowle-data">${eachRow.id} </td>
+              <td>${eachRow.name} </td>
+              <td>${eachRow.Place}</td>
+              <td>${eachRow.State}</td>
             </tr>`;
   }
 
-  document.getElementById("isroCenters").innerHTML = tab;
+  document.getElementById("isroCenters").innerHTML = tableRow;
 }
 
 let flag = "";
 
-function cityBtn() {
+function cityButtonn() {
   flag = "city";
   searchData();
 }
 
-function stateBtn() {
+function stateButton() {
   flag = "state";
   searchData();
 }
 
-function centerBtn() {
+function centerButton() {
   flag = "name";
   searchData();
 }
 
 function searchData() {
-  let val = document.getElementById("search").value;
-  let tab = `<tr>
-        <th>S.no</th>
-		<th>Center Name</th>
-		<th>Place</th>
-		<th>State</th>
-		</tr>`;
+  let inputValue = document.getElementById("search").value;
+  let tableRow = `<tr>
+                    <th>S.no</th>
+                    <th>Center Name</th>
+                    <th>Place</th>
+                    <th>State</th>
+                  </tr>`;
 
-  if (val != "") {
+  if (inputValue != "") {
     if (flag === "name") {
-      searchByName(tab, val);
+      searchByName(tableRow, inputValue);
     } else if (flag === "city") {
-      searchByCity(tab, val);
+      searchByCity(tableRow, inputValue);
     } else if (flag === "state") {
-      searchByState(tab, val);
+      searchByState(tableRow, inputValue);
     }
   }
 }
 
-function searchByName(tab, val) {
+function searchByName(tableRow, inputValue) {
   let i = 1;
 
-  cityBttn.classList.remove("active");
-  stateBttn.classList.remove("active");
-  centreBttn.classList.add("active");
+  cityBtn.classList.remove("active");
+  stateBtn.classList.remove("active");
+  centerBtn.classList.add("active");
 
-  for (let r of data.centres) {
-    if (r.name.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr>
-			<td>${i++} </td>
-			<td>${r.name} </td>
-			<td>${r.Place}</td>
-			<td>${r.State}</td>
-			</tr>`;
+  for (let eachRow of data.centres) {
+    if (eachRow.name.toLowerCase().includes(inputValue.toLowerCase())) {
+      tableRow += `<tr>
+                    <td>${i++} </td>
+                    <td>${eachRow.name} </td>
+                    <td>${eachRow.Place}</td>
+                    <td>${eachRow.State}</td>
+                  </tr>`;
     }
   }
 
   if (i <= 1) {
-    tab += `<tr>
-			<td colspan="4" style="text-align:center;">No Record Found!!</td>
-		</tr>`;
+    tableRow += `<tr>
+                  <td colspan="4" style="text-align: center;">No Record Found!!</td>
+                </tr>`;
   }
 
-  document.getElementById("isroCenters").innerHTML = tab;
+  document.getElementById("isroCenters").innerHTML = tableRow;
 }
 
-function searchByState(tab, val) {
+function searchByState(tableRow, inputValue) {
   let i = 1;
 
-  cityBttn.classList.remove("active");
-  stateBttn.classList.add("active");
-  centreBttn.classList.remove("active");
+  cityBtn.classList.remove("active");
+  stateBtn.classList.add("active");
+  centerBtn.classList.remove("active");
 
-  for (let r of data.centres) {
-    if (r.State.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr>
-			<td>${i++} </td>
-			<td>${r.name} </td>
-			<td>${r.Place}</td>
-			<td>${r.State}</td>
-		</tr>`;
+  for (let eachRow of data.centres) {
+    if (eachRow.State.toLowerCase().includes(inputValue.toLowerCase())) {
+      tableRow += `<tr>
+                <td>${i++} </td>
+                <td>${eachRow.name} </td>
+                <td>${eachRow.Place}</td>
+                <td>${eachRow.State}</td>
+              </tr>`;
     }
   }
 
   if (i <= 1) {
-    tab += `<tr>
-			<td colspan="4" style="text-align:center;">No Record Found!!</td>
-		</tr>`;
+    tableRow += `<tr>
+                  <td colspan="4" style="text-align: center;">No Record Found!!</td>
+                </tr>`;
   }
 
-  document.getElementById("isroCenters").innerHTML = tab;
+  document.getElementById("isroCenters").innerHTML = tableRow;
 }
 
-function searchByCity(tab, val) {
+function searchByCity(tableRow, inputValue) {
   let i = 1;
 
-  cityBttn.classList.add("active");
-  stateBttn.classList.remove("active");
-  centreBttn.classList.remove("active");
+  cityBtn.classList.add("active");
+  stateBtn.classList.remove("active");
+  centerBtn.classList.remove("active");
 
-  for (let r of data.centres) {
-    if (r.Place.toLowerCase().includes(val.toLowerCase())) {
-      tab += `<tr>
-			<td>${i++} </td>
-			<td>${r.name} </td>
-			<td>${r.Place}</td>
-			<td>${r.State}</td>
-		</tr>`;
+  for (let eachRow of data.centres) {
+    if (eachRow.Place.toLowerCase().includes(inputValue.toLowerCase())) {
+      tableRow += `<tr>
+                    <td>${i++} </td>
+                    <td>${eachRow.name} </td>
+                    <td>${eachRow.Place}</td>
+                    <td>${eachRow.State}</td>
+                  </tr>`;
     }
   }
 
   if (i <= 1) {
-    tab += `<tr>
-			<td colspan="4" style="text-align:center;">No Record Found!!</td>
-		</tr>`;
+    tableRow += `<tr>
+                  <td colspan="4" style="text-align: center;">No Record Found!!</td>
+                </tr>`;
   }
-  document.getElementById("isroCenters").innerHTML = tab;
+  document.getElementById("isroCenters").innerHTML = tableRow;
 }
 
 getapi();
