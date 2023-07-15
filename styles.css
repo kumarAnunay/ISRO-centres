@@ -10,6 +10,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure the body covers the full viewport height */
 }
 
 .navBar {
@@ -20,6 +24,8 @@ body {
   background-color: #1D5D9B;
   position: fixed;
   width: 100%;
+  z-index: 1;
+  /* Add a higher z-index to keep it above the content */
 }
 
 .list {
@@ -39,13 +45,14 @@ li:hover {
 
 .name {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 20px;
   color: #dfd9d9;
 }
 
 h1 {
-  font-size: 30px;
-  text-shadow: 1px 1px 3px black;
+  font-size: 25px;
+  text-shadow: 1px 1px 3px #1D5D9B;
 }
 
 .logo>img {
@@ -55,10 +62,12 @@ h1 {
 }
 
 .main {
-  margin: 20px 5%;
+  margin: 20px 10%;
   border: 2px solid black;
   box-shadow: 1px 1px 5px 7px #913535;
   background-color: white;
+  flex: 1;
+  /* Allow the main content to expand and fill remaining space */
 }
 
 .search {
@@ -75,6 +84,7 @@ h1 {
   height: 60px;
   background-color: #1D5D9B;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .footerList {
@@ -101,24 +111,36 @@ a {
   width: 400px;
   height: 40px;
   margin: 10px;
-  padding: 7px;
+  padding: 10px;
   font-size: 20px;
-  border-radius: 10px;
-  border: 1px solid #6355a98f;
+  border-radius: 8px;
+  border: 1px solid black;
+  border-bottom: 3px solid #1D5D9B;
+}
+
+#search:focus {
+  outline: 2px solid #1D5D9B;
+  border: none;
 }
 
 button {
   width: 100px;
-  background: #553788;
-  border: none;
+  background: white;
+  border: 1px solid #1D5D9B;
   padding: 5px;
-  border-radius: 15px;
-  color: white;
+  border-radius: 5px;
+  color: #1D5D9B;
   cursor: pointer;
   margin-left: 5px;
   height: 35px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #1D5D9B;
+  color: white;
+  border: 1px solid #1D5D9B;
 }
 
 .userCards {
@@ -126,8 +148,9 @@ button {
 }
 
 .active {
-  background-color: #913535;
-  transform: scale(1.1);
+  background-color: #1D5D9B;
+  color: white;
+  border: 1px solid #1D5D9B;
 }
 
 table {
@@ -249,6 +272,55 @@ tr:nth-child(even) {
 
   table {
     font-size: 10px;
+  }
+
+  .logo>img {
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+  }
+
+  .main {
+    box-shadow: 0px 0px 3px 3px #913535;
+  }
+
+  #search {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  li {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .copyright {
+    font-size: 10px;
+    margin-left: 15px;
+  }
+
+  .navBar {
+    height: 50px;
+  }
+
+  .footer {
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .name {
+    padding-top: 80px;
+  }
+
+  .footerLogo {
+    width: 20px;
+    height: 20px;
   }
 
 }
