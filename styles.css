@@ -5,29 +5,60 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.logo {
-  margin-top: 5%;
-  margin-left: 5%;
+body {
+  background-image: url("https://wallpapers.com/images/hd/4k-space-luminescent-blue-light-u2w28fwsw3a46154.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #1D5D9B;
+  position: fixed;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  color: #dfd9d9;
+  padding: 15px;
+}
+
+li:hover {
+  background-color: #dfd9d9;
+  color: #1D5D9B;
 }
 
 .name {
   text-align: center;
+  padding-top: 100px;
+  color: #dfd9d9;
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 30px;
   text-shadow: 1px 1px 3px black;
 }
 
 .logo>img {
-  width: 100px;
-  height: 100px;
+  margin-left: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .main {
   margin: 20px 5%;
   border: 2px solid black;
   box-shadow: 1px 1px 5px 7px #913535;
+  background-color: white;
 }
 
 .search {
@@ -35,6 +66,35 @@ h1 {
   justify-content: space-around;
   align-items: center;
   margin-top: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #1D5D9B;
+  width: 100%;
+}
+
+.footerList {
+  display: flex;
+  padding: 10px;
+  list-style: none;
+}
+
+a {
+  all: unset;
+}
+
+.copyright {
+  margin-left: 50px;
+  color: #dfd9d9;
+}
+
+.footerLogo {
+  height: 30px;
+  width: 30px;
 }
 
 #search {
