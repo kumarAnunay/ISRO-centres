@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* Ensure the body covers the full viewport height */
+  justify-content: space-between;
 }
 
 .navBar {
@@ -25,7 +25,6 @@ body {
   position: fixed;
   width: 100%;
   z-index: 1;
-  /* Add a higher z-index to keep it above the content */
 }
 
 .list {
@@ -67,8 +66,6 @@ h1 {
   border: 2px solid black;
   box-shadow: 1px 1px 5px 7px #913535;
   background-color: white;
-  flex: 1;
-  /* Allow the main content to expand and fill remaining space */
 }
 
 .search {
@@ -85,6 +82,7 @@ h1 {
   height: 60px;
   background-color: #1D5D9B;
   width: 100%;
+  z-index: 1;
   flex-shrink: 0;
 }
 
@@ -191,6 +189,7 @@ tr:nth-child(even) {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  margin-top: 50px;
 }
 
 @keyframes rotation {
@@ -203,7 +202,7 @@ tr:nth-child(even) {
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px) {
+@media screen and (min-width: 600px) and (max-width: 1071px) {
 
   .main {
     margin: 10px 5%;
@@ -268,7 +267,8 @@ tr:nth-child(even) {
 
   button {
     max-width: 70px;
-    font-size: 15px;
+    font-size: 13px;
+    height: 28px;
   }
 
   table {
@@ -289,12 +289,8 @@ tr:nth-child(even) {
     font-size: 14px;
   }
 
-  button {
-    font-size: 14px;
-  }
-
   li {
-    font-size: 13px;
+    font-size: 12px;
     padding: 8px;
   }
 
@@ -312,7 +308,7 @@ tr:nth-child(even) {
   }
 
   h1 {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .name {
